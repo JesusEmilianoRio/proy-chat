@@ -15,6 +15,10 @@ io.on('connection', (socket) => {
     socket.on('disconnect', () =>{
         console.log('An user has disconnected')
     })
+    socket.on('Chat message', (msg) => {
+        io.emit('Chat message', msg);
+
+    })
 })
 
 app.get('/', (req, res) => {
